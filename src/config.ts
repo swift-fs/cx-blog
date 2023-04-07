@@ -1,19 +1,19 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://astro-paper.pages.dev/",
+  website: "https://www.nextopenai.cn/",
   author: "Swift",
-  desc: "66666666666666666666666666666.",
-  title: "AstroPaper",
+  desc: "日常/工作/开发-Python-Go-Javascript记录",
+  title: "Swift个人博客",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
-  postPerPage: 3,
+  postPerPage: 10,
 };
 
 export const LOGO_IMAGE = {
   enable: false,
   svg: true,
-  width: 216,
+  width: 256,
   height: 46,
 };
 
