@@ -4,7 +4,7 @@ description: "文章描述信息文章描述信息文章描述信息文章描述
 pubDatetime: 2023-04-07T18:00:00+08
 postSlug: test001
 featured: false
-draft: false
+draft: true
 tags:
   - test
   - java
@@ -12,6 +12,7 @@ tags:
 ---
 
 
-<!-- the rest of the post -->
+<!-- 博客内容 -->
 
-### 人才
+
+
