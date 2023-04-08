@@ -8,7 +8,7 @@ export const blogSchema = z
     postSlug: z.string().optional(),
     featured: z.boolean().optional(),
     draft: z.boolean().optional(),
-    tags: z.array(z.string()).default(["others"]),
+    tags: z.array(z.string()).default(["杂项"]),
     ogImage: z.string().optional(),
     description: z.string(),
   })
