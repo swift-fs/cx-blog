@@ -34,7 +34,7 @@ const breadcrumbMap = {
               aria-current="page"
             >
               {/* make the last part lowercase in Home > Tags > some-tag */}
-              {breadcrumbMap[breadcrumb] ?? breadcrumb}
+              {breadcrumbMap[breadcrumb] ?? decodeURIComponent(breadcrumb)}
             </span>
           </li>
         ) : (
