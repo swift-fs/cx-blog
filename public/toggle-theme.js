@@ -1,5 +1,5 @@
 //  BugFix: 默认主题
-const primaryColorScheme = "dark"; // "light" | "dark"
+const primaryColorScheme = "light"; // "light" | "dark"
 
 // Get theme data from local storage
 const currentTheme = localStorage.getItem("theme");
