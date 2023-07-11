@@ -2,7 +2,7 @@
 title: "Python专题 | Python入门"
 description: ""
 pubDatetime: 2023-07-11T18:00:00+08
-postSlug: python-async
+postSlug: python-start
 featured: false
 draft: false
 tags:
