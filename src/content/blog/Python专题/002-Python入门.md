@@ -728,3 +728,281 @@ print(d1)
 ```python
 
 ```
+
+### 推导式
+
+#### 列表推导式
+
+```python
+[表达式 for item in 可迭代对象]
+```
+
+#### 字典推导式
+
+```python
+{健：值 for item in 可迭代对象}
+```
+
+#### 集合推导式
+
+```python
+{表达式 for item in 可迭代对象}
+```
+
+#### 生成器推导式
+
+没有元组推导式，生成器推导式可以转换成其他的数据结构，一个生成器只能运行一次。
+
+```python
+(表达式 for item in 可迭代对象)
+```
+
+#### 综合使用
+
+绘制同心圆：
+
+```python
+import turtle
+
+circles = [
+    ('red', 10),
+    ('green', 20),
+    ('blue', 30),
+    ('orange', 40)
+]
+
+for color, radius in circles:
+    turtle.penup()
+    turtle.setx(0)
+    turtle.sety(-radius)
+    turtle.pensize(2)
+    turtle.pendown()
+    turtle.color(color)
+    turtle.circle(radius, )
+
+turtle.done()
+
+```
+
+### 函数
+
+函数是可重用的代码块，主要解决代码复用性。每个函数代表一个任务或者功能。
+
+```python
+# 函数定义
+def print_max(a: int, b: int) -> int:
+    """
+    文档字符串
+    返回两个数中的较大值
+    :param a: 参数1
+    :param b: 参数2
+    :return: 返回较大的值
+    """
+    if a > b:
+        return a
+    return b
+
+
+# 函数调用
+print(print_max(100, 20))
+
+# 可以通过help获取文档字符串
+help(print_max)
+
+```
+
+#### 返回值
+
+通过return返回值，两个主要作用：
+
+- 结束函数执行
+- 返回一个值给调用者
+
+如果函数不包含return，默认函数执行完毕后返回None
+
+#### 函数也是对象
+
+Python中一切都是对象。
+
+```python
+def print_star(n: int):
+    print("*" * n)
+
+
+print(print_star)
+print(type(print_star))
+print(id(print_star))
+
+c = print_star
+c(10)
+
+d = print_star
+d(20)
+print(d)
+print(type(d))
+print(id(d))
+
+```
+
+#### 变量作用域
+
+全局变量：函数和类外边声明的变量。作用域为所定义的模块，从定义位置开始，直到模块结束。
+
+局部变量：在函数体内声明的变量。
+
+函数体内，局部变量的优先级高于全局变量。局部变量的执行效率更高。
+
+```python
+global_a = 100
+
+
+def func1():
+    # 函数内修改全局变量，使用global关键字进行声明
+    global global_a
+    b = 3
+    print(global_a)
+    print(b)
+    global_a = 109
+
+
+func1()
+print(global_a)  # 109
+
+```
+
+#### 参数的传递
+
+Python中的赋值都是引用传递，包括函数调用实参往形参传值。
+
+```python
+l1 = [10, 20, 30]
+
+
+def fun1(m: list):
+    m.append(100)
+    print("m:", id(m))
+
+
+fun1(l1)
+print("l1:", id(l1))
+print(l1)
+
+```
+
+#### 深浅拷贝
+
+```python
+l1 = [10, 20, [30, 40]]
+
+import copy
+
+# 浅拷贝
+l2 = copy.copy(l1)
+# 深拷贝
+l3 = copy.deepcopy(l1)
+l1[0] = 11
+
+print(l1)
+print(l2)
+print(l3)
+
+l1[2][0] = 99
+print(l1)
+print(l2)
+print(l3)
+
+```
+
+#### 参数类型
+
+```python
+# a,b位置参数
+# c默认参数
+def func1(a, b, c=10):
+    print(a, b, c)
+
+
+func1(10, 20)
+func1(10, 20, 30)
+# 命名参数
+func1(c=200, a=9, b=6)
+
+```
+
+```python
+# *args 可变参数
+# **kwargs 可变命名参数
+def func(a, b, c, *args, **kwargs):
+    print(a, b, c)
+    print(args)
+    print(kwargs)
+
+
+func(10, 20, 30, 100)
+func(10, 20, 30, 100, name="哈哈", age=10, gender=True)
+
+```
+
+#### lambda
+
+一般不推荐使用
+
+```python
+f = lambda a, b, c: a + b + c
+print(f(10, 20, 30))
+
+```
+
+#### eval()
+
+一般不推荐使用
+
+功能：将字符串当成有效的语句来执行并返回结果。
+
+```python
+str1 = "print('hello world')"
+eval(str1)
+
+dict1 = dict(c=100861, a=10)
+str2 = '''
+a+c
+'''
+d = eval(str2, dict1)
+print(d)
+
+```
+
+#### 嵌套函数
+
+```python
+# 嵌套函数
+def outer():
+    print("outer func")
+    b = 10086
+
+    def inner():
+        nonlocal b  # 声明外部函数的局部变量
+        print("inner func")
+        print(b)
+        b = 109
+
+    inner()
+    print(b)
+
+
+outer()
+
+```
+
+#### LEGB规则
+
+python在查找变量时，按照LEGB规则（局部，外部函数，全局，内置）。
+
+
+
+
+
+
+
+
+
