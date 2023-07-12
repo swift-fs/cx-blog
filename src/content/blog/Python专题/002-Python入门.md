@@ -12,8 +12,8 @@ tags:
 
 ### 基本格式
 
-- Python使用缩进来组织代码块，而不是{}
-- Python是区分大小写的
+- Python 使用缩进来组织代码块，而不是{}
+- Python 是区分大小写的
 
 ### 注释
 
@@ -50,7 +50,6 @@ turtle.goto(0, 300)
 turtle.pendown()  # 放下画笔
 turtle.circle(100)
 turtle.done()
-
 ```
 
 奥运五环：
@@ -89,26 +88,25 @@ turtle.pendown()
 turtle.circle(50)
 
 turtle.done() # 程序一直保持运行
-
 ```
 
-### Python程序的构成
+### Python 程序的构成
 
-- 每个.py文件就是一个模块，python程序由各个模块组成
+- 每个.py 文件就是一个模块，python 程序由各个模块组成
 - 语句是模块内的基本单元
-- python强制使用缩进来组织代码块
+- python 强制使用缩进来组织代码块
 - 一行代码较长，可以使用使用`\`行连接符换行
 
 ### 一切皆对象
 
-- Python中，一切皆对象
+- Python 中，一切皆对象
 - 每个对象由：标识（id），类型（type），值（value）组成
 
-> 标识唯一标识对象，通常对应计算机中的内存地址，也叫指针，使用内置函数id(obj)可以获取对象的标识
+> 标识唯一标识对象，通常对应计算机中的内存地址，也叫指针，使用内置函数 id(obj)可以获取对象的标识
 >
-> 类型用于表示对象的存储类型，可以使用内置函数type(obj)获取对象的类型
+> 类型用于表示对象的存储类型，可以使用内置函数 type(obj)获取对象的类型
 >
-> 值表示对象存储的具体数据，可以通过print(obj)直接打印出值
+> 值表示对象存储的具体数据，可以通过 print(obj)直接打印出值
 
 > 对象的本质：一个内存块，拥有特定的值，支持特定类型的相关操作。
 
@@ -121,12 +119,11 @@ b = "我爱你"
 print(b)
 print(type(b))
 print(id(b))
-
 ```
 
 #### 引用
 
-在Python中，变量也称为引用（reference）。变量存储的是对象的地址。变量通过地址指向（引用）了对象。 变量位于栈内存，对象位于堆内存。Python是动态类型，所以不用显式指定变量类型，因为变量可以通过引用的对象确定类型。
+在 Python 中，变量也称为引用（reference）。变量存储的是对象的地址。变量通过地址指向（引用）了对象。 变量位于栈内存，对象位于堆内存。Python 是动态类型，所以不用显式指定变量类型，因为变量可以通过引用的对象确定类型。
 
 ### 标识符
 
@@ -170,7 +167,6 @@ print(a, b, c)
 a, b = b, a
 print(a)
 print(b)
-
 ```
 
 常量一般使用大写，多个单词使用下划线隔开。
@@ -192,7 +188,6 @@ a1 = 10 / 5  # 浮点数除法
 print(a1)  # 2.0
 a2 = 10 // 5  # 整数除法
 print(a2)  # 2
-
 ```
 
 #### 整数
@@ -235,7 +230,6 @@ print(type(f))
 e = "12.45"
 # 转换为浮点数
 print(float(e))
-
 ```
 
 #### 小例子
@@ -256,7 +250,6 @@ turtle.goto(x3, y3)
 turtle.goto(x4, y4)
 turtle.write(f'{x1 - x4},{y1 - y4}')
 turtle.done()
-
 ```
 
 ### 运算符
@@ -306,7 +299,6 @@ print(str1 is str2)  # True
 
 # 判断字符串是否包含某一部分
 print("abc" in "abcd")
-
 ```
 
 ### 字符串
@@ -341,7 +333,6 @@ input01 = input("请输入名称：")
 input02 = input("请输入年龄：")
 print(input01)
 print(int(input02))
-
 ```
 
 #### 常用操作
@@ -392,7 +383,6 @@ print(s2.lower())
 a = "TXT"
 # 字符串填充指定长度
 print(a.center(12, "*"))
-
 ```
 
 #### 可变字符串
@@ -409,7 +399,6 @@ sio.seek(3)
 # 在指针停留的位置写入字符串
 sio.write("哈哈")
 print(sio.getvalue())
-
 ```
 
 ### 序列
@@ -435,7 +424,6 @@ print(l3)
 # 推导式
 l4 = [x * 3 for x in range(0, 10)]
 print(l4)
-
 ```
 
 #### 列表元素的添加
@@ -459,7 +447,6 @@ print(l1)
 # 05
 l1.insert(1, 1908)
 print(l1)
-
 ```
 
 #### 列表元素删除
@@ -479,8 +466,273 @@ l1 = [1, 2, 6, 9, 0, 2]
 # 03
 # l1.remove(2)
 # print(l1)
+```
+
+#### 列表元素访问
+
+```python
+list01 = [1, 3, 5, 7, 9, 1]
+# 元素出现次数
+print(list01.count(1))
+# 元素第一次出现的索引
+print(list01.index(3))
+# 通过索引访问元素
+print(list01[4])
+# 列表长度
+print(len(list01))
+# 元素是否在列表中
+print(2 in list01)
+print(3 in list01)
+print(100 not in list01)
+```
+
+#### 列表切片
+
+```python
+list02 = [1, 2, 5, 8, 0]
+
+# 列表切片
+list03 = list02[:2]
+print(list03)
+
+# 复制一个列表
+list04 = list02[:]
+print(list04)
+
+# 列表切片，每隔3个取一个
+list05 = list02[::3]
+print(list05)
+```
+
+#### 列表复制/排序/遍历/最大*最小*和
+
+```python
+
+import random
+
+a = [10, 5, 20, 60, 30]
+print(a)
+# 原列表排序
+a.sort()
+print(a)
+a.sort(reverse=True)
+
+print(a)
+
+# 随机排序
+random.shuffle(a)
+
+b = [1, 2, 5, 8, 0]
+# 列表复制
+b1 = [] + b
+print(b)
+print(id(b))
+print(id(b1))
+
+c = [11, 9, 670, 33]
+# 排序，产生新的列表
+c1 = sorted(c)
+print(c)
+print(c1)
+
+# 遍历
+for obj in c:
+    print(obj)
+
+a = [10, 90, 100, 3]
+
+print(max(a))
+print(min(a))
+print(sum(a))
 
 ```
 
+#### 多维列表
 
+实际工作中，最多用到二维数组，一维的代表线性数据，二维的可以代表表格数据，如工作中常用的 excel 表格就可以使用二维数组进行表达。
 
+```python
+table = [
+    ["小微", 19, 19800],
+    ["小王", 20, 32000],
+    ["小孙", 32, 36000]
+]
+
+for item in table:
+    # print(item)
+    for inner in item:
+        print(inner, end="\t")
+    print("\n")
+
+print(table[0][0])
+rint("\n")
+
+```
+
+#### 元组定义
+
+```python
+# 元组是不可变的列表，没有增删改的方法
+t1 = (1, 2, 5, 8, 0)
+print(t1)
+print(type(t1))
+
+t2 = 1, 2, 5, 8, 0
+print(t2)
+print(type(t2))
+
+t3 = (1,)
+print(t3)
+print(type(t3))
+
+# 整型int
+i4 = (1)
+print(i4)
+print(type(i4))
+
+# tuple(x)，可以接受列表，字符串，其他序列类型，迭代器生成元组
+# list(x)，可以接受元组，字符串，其他序列类型，迭代器生成列表
+
+l1 = [1, 2, 5, 8]
+# 列表转元组
+t4 = tuple(l1)
+print(t4)
+print(type(t4))
+
+# 元组转列表
+l2 = list(t4)
+print(l2)
+print(type(l2))
+
+```
+
+#### 元组其他
+
+```python
+# 列表推导式
+a = [x * 10 for x in range(1, 10)]
+print(a)
+
+# 生成器
+b = (x * 2 for x in range(1, 20))
+print(b)
+t = tuple(b)
+print(t)
+
+b1 = (x * 2 for x in range(3))
+# 通过__next__方法访问生成器的元素
+print(b1.__next__())
+print(b1.__next__())
+
+c = ["小红"]
+d = [17, 19, 12]
+f = [3247, 1896, 5678]
+# 多列表聚合
+r = zip(c, d, f)
+
+# l01 = list(r)
+# print(l01)
+
+t01 = tuple(r)
+print(t01)
+
+```
+
+#### 字典的创建方式
+
+```python
+# 最常用
+d1 = {
+    "name": "小吴",
+    "age": 18,
+    "gender": True
+}
+
+print(d1)
+print(type(d1))
+
+# 常用
+d2 = dict(name="小红", age=20, gender=False)
+print(d2)
+print(type(d2))
+
+# 较常用
+d3 = dict([("name", "小绿"), ("age", 90)])
+print(d3)
+print(type(d3))
+
+# 较常用
+keys = ["name", "age", "gender"]
+values = ["天下", 29, False]
+d4 = dict(zip(keys, values))
+print(d4)
+print(type(d4))
+
+# 非常少用
+d5 = dict.fromkeys(keys, )
+print(d5)
+print(type(d5))
+
+# 字典的key必须是不可变对象，元组可以当做key，但是列表不行
+
+```
+
+#### 字典常用操作
+
+```python
+d1 = {
+    "name": "小王八",
+    "age": 6986,
+    "gender": True
+}
+
+print(d1["name"])
+
+# 最常用
+print(d1.get("name"))
+
+# 不存在key会报错
+# print(d1["age01"])
+
+# 不存在的key，可以指定获取不到的 默认值
+print(d1.get("age01", 18))
+print(list(d1.items()))
+print(list(d1.keys()))
+for key in d1.keys():
+    print("key:", key)
+print(d1.values())
+# 字典中键值对数量
+print(len(d1))
+# key是否在字典中
+print("age01" in d1)
+
+```
+
+```python
+d1 = {
+    "name": "小王八",
+    "age": 6986,
+    "gender": True
+}
+# d1.setdefault("address")
+# 增加
+d1["hobbies"] = ["吃饭"]
+print(d1)
+d1.setdefault("height", 180)
+print(d1)
+
+# 删除指定键值对
+del d1["hobbies"]
+print(d1)
+# 删除所有键值对
+d1.clear()
+
+# 修改
+d1["height"] = 160
+print(d1)
+
+```
+
+```python
+
+```
