@@ -507,7 +507,6 @@ print(list05)
 #### 列表复制/排序/遍历/最大*最小*和
 
 ```python
-
 import random
 
 a = [10, 5, 20, 60, 30]
@@ -544,7 +543,6 @@ a = [10, 90, 100, 3]
 print(max(a))
 print(min(a))
 print(sum(a))
-
 ```
 
 #### 多维列表
@@ -566,7 +564,6 @@ for item in table:
 
 print(table[0][0])
 rint("\n")
-
 ```
 
 #### 元组定义
@@ -603,7 +600,6 @@ print(type(t4))
 l2 = list(t4)
 print(l2)
 print(type(l2))
-
 ```
 
 #### 元组其他
@@ -635,7 +631,6 @@ r = zip(c, d, f)
 
 t01 = tuple(r)
 print(t01)
-
 ```
 
 #### 字典的创建方式
@@ -674,7 +669,6 @@ print(d5)
 print(type(d5))
 
 # 字典的key必须是不可变对象，元组可以当做key，但是列表不行
-
 ```
 
 #### 字典常用操作
@@ -705,7 +699,6 @@ print(d1.values())
 print(len(d1))
 # key是否在字典中
 print("age01" in d1)
-
 ```
 
 ```python
@@ -730,7 +723,6 @@ d1.clear()
 # 修改
 d1["height"] = 160
 print(d1)
-
 ```
 
 ```python
